@@ -20,6 +20,25 @@ var handleClick = (e) => {
 document.getElementById("menu").addEventListener("click", handleClick);
 
 
+// Disappearing Nav
+var nav = document.getElementById("navbar");
+var prevScrollpos = window.pageYOffset;
+
+function disappearingNav() {
+	if (document.documentElement.clientWidth < 737) {
+
+		var currentScrollPos = window.pageYOffset;
+		if (prevScrollpos < currentScrollPos) {
+			nav.classList.add('nav-slide');
+		} else {
+			nav.classList.remove('nav-slide');
+		}
+		prevScrollpos = currentScrollPos;
+	}
+}
+
+window.addEventListener('scroll', disappearingNav);
+
 $(function() {
 
   $('#gallery').poptrox({
