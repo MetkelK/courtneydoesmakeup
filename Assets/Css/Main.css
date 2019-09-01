@@ -16,6 +16,15 @@ html p {
 	font-family: 'Cinzel', serif;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:active, a:visited {
+	color: black;
+}
+
 .wrapper {
 	margin: 0 auto;
 	width: 90%;
