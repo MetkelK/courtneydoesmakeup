@@ -17,7 +17,7 @@ var handleClick = (e) => {
 		}
 }
 
-document.getElementById("menu").addEventListener("click", handleClick);
+document.getElementById("menu").addEventListener("click", handleClick, {passive: true});
 
 
 // Disappearing Nav
@@ -37,7 +37,7 @@ function disappearingNav() {
 	}
 }
 
-window.addEventListener('scroll', disappearingNav);
+window.addEventListener('scroll', disappearingNav, {passive: true});
 
 $(function() {
 
