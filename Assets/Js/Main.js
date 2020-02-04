@@ -7,12 +7,12 @@ var handleClick = (e) => {
 		var offClick = (evt) => {
 			if (e !== evt) {
 				menuList.classList.toggle(menuListOpen);
-				document.removeEventListener('click', offClick)
+				document.removeEventListener('click', offClick, {passive: true})
 			}
 		}
 			if (!menuList.classList.contains(menuListOpen)) {
 				menuList.classList.toggle(menuListOpen);
-				document.addEventListener('click', offClick)
+				document.addEventListener('click', offClick, {passive: true})
 			}
 		}
 }
