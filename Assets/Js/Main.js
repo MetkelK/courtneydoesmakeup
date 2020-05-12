@@ -1,10 +1,9 @@
-var menuList = document.getElementById("menu-list");
-	
-var menuListOpen = 'menu-list-open';
+const menuList = document.getElementById("menu-list");	
+const menuListOpen = 'menu-list-open';
 
-var handleClick = (e) => {
+const handleClick = (e) => {
 	if (document.documentElement.clientWidth < 737) {
-		var offClick = (evt) => {
+		const offClick = (evt) => {
 			if (e !== evt) {
 				menuList.classList.toggle(menuListOpen);
 				document.removeEventListener('click', offClick, {passive: true})
@@ -21,13 +20,13 @@ document.getElementById("menu").addEventListener("click", handleClick, {passive:
 
 
 // Disappearing Nav
-var nav = document.getElementById("navbar");
-var prevScrollpos = window.pageYOffset;
+const nav = document.getElementById("navbar");
+const prevScrollpos = window.pageYOffset;
 
 function disappearingNav() {
 	if (document.documentElement.clientWidth < 737) {
 
-		var currentScrollPos = window.pageYOffset;
+		const currentScrollPos = window.pageYOffset;
 		if (prevScrollpos < currentScrollPos) {
 			nav.classList.add('nav-slide');
 		} else {
@@ -73,3 +72,5 @@ $('.banner-button a').on('click', function(e) {
        },800);
 	}
 })
+
+
