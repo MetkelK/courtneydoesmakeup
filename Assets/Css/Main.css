@@ -201,7 +201,6 @@ nav ul li a {
 	color: white;
 }
 
-
 /*SPOTLIGHT SECTION*/
 
 .spotlight {
@@ -234,7 +233,6 @@ nav ul li a {
 	padding: 1rem;
 }
 
-
 #spotlight1 {
 	background-image: url(../../Images/spencer-dahl-796543-unsplash-double-resize.jpg);
 	height: 100vh;
@@ -249,7 +247,6 @@ nav ul li a {
   	background-size: cover;
   	background-repeat: no-repeat;
   	background-position: 50% 50%;
- 
 }
 
 .gallery-inner {
@@ -303,9 +300,6 @@ img {
 	text-align: center;
 }
 
-
-
-
 /*CONTACT FORM*/
 
 .fields {
@@ -315,7 +309,6 @@ img {
 	grid-template-rows: 1fr 1fr;
 	place-items: stretch;
 }
-
 
 .field-half-name {
 	grid-column: 1/ span 1;
@@ -344,7 +337,6 @@ img {
   	height: 6rem;
   	padding-top: 1rem;
 }
-
 
 input, textarea {
 	height: 3rem;
