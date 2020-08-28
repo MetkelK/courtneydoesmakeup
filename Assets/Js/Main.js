@@ -40,7 +40,6 @@ function disappearingNav() {
 window.addEventListener('scroll', disappearingNav, {passive: true});
 
 $(function() {
-
   $('#gallery').poptrox({
   	usePopupEasyClose: true,
     popupBackgroundColor: '#FFF5F8'
