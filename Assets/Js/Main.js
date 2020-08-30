@@ -1,32 +1,13 @@
-const documentApp = {};
-
-// let menuList = document.getElementById("menu-list");	
-// let menuListOpen = 'menu-list-open';
-// let handleClick = (e) => {
-// 	if (document.documentElement.clientWidth < 737) {
-// 		let offClick = (evt) => {
-// 			if (e !== evt) {
-// 				menuList.classList.toggle(menuListOpen);
-// 				document.removeEventListener('click', offClick, {passive: true})
-// 			}
-// 		}
-// 			if (!menuList.classList.contains(menuListOpen)) {
-// 				menuList.classList.toggle(menuListOpen);
-// 				document.addEventListener('click', offClick, {passive: true})
-// 			}
-// 		}
-// }
-
-// document.getElementById("menu").addEventListener("click", handleClick, {passive: true});
+const App = {};
 
 // function that closes the menu when the user clicks off it
-documentApp.handleMenuClose = function () {
+App.handleMenuClose = function () {
 	$('#menu').on('click', function(e) {
 		if ($(document).width() < 737) {
 			let offClick = function (event) {
 				if (e.target !== event.target) {
 					$('#menu-list').removeClass('menu-list-open');
-					documentApp.handleMenuClose();
+					App.handleMenuClose();
 				}
 			}
 			if (!$('#menu-list').hasClass('menu-list-open')) {
@@ -38,7 +19,7 @@ documentApp.handleMenuClose = function () {
 }
 
 // function that makes the navbar disappearing when the user scrolls down and reappear when the user scrolls up
-documentApp.disappearingNav = function () {
+App.disappearingNav = function () {
 	let prevScrollpos = $(window).scrollTop();
 	$(window).scroll(function() {
 		if ($(document).width() < 737) {
@@ -54,7 +35,7 @@ documentApp.disappearingNav = function () {
 }
 
 //function that controls the lightbox gallery
-documentApp.lightboxGallery = function () {
+App.lightboxGallery = function () {
 	$('#gallery').poptrox({
 	  	usePopupEasyClose: true,
 	    popupBackgroundColor: '#FFF5F8',
@@ -63,7 +44,7 @@ documentApp.lightboxGallery = function () {
 }
 
 //function that smooth scrolls to the gallery when the user click on the check me out button
-documentApp.scrollToGallery = function () {
+App.scrollToGallery = function () {
 	$('.banner-button a').on('click', function(e) {
 		if (this.hash !== '') {
 			e.preventDefault();
@@ -77,7 +58,7 @@ documentApp.scrollToGallery = function () {
 }
 
 //function that smooth scrolls when the user clicks on the navbar buttons
-documentApp.smoothScroll = function () {
+App.smoothScroll = function () {
 	$('#menu-list a').on('click', function(e) {
 		if (this.hash !== '') {
 			e.preventDefault();
@@ -90,15 +71,15 @@ documentApp.smoothScroll = function () {
 	})
 }
 
-documentApp.init = function () {
-	documentApp.lightboxGallery();
-	documentApp.scrollToGallery();
-	documentApp.smoothScroll();
-	documentApp.disappearingNav();
-	documentApp.handleMenuClose();
+App.init = function () {
+	App.lightboxGallery();
+	App.scrollToGallery();
+	App.smoothScroll();
+	App.disappearingNav();
+	App.handleMenuClose();
 }
 
 
-$(document).ready(function () {
-	documentApp.init();
+$(function () {
+	App.init();
 });
