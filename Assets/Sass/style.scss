@@ -1,7 +1,7 @@
-$primary-color: #A67E89;
-$secondary-color: #FFF5F8;
-$border-color: #F8F8FF;
-$icon-color: #73404E;
+$primary-color: rgb(166,126,137);
+$secondary-color: rgb(255,245,248);
+$border-color: rgb(248,248,255);
+$icon-color: rgb(115,64,78);
 $background-gradient: linear-gradient(to right, rgba(166,126,137,0.8), rgba(255,245,248,1));
 $box-shadow: 3px 3px 30px 1px rgba(166,126,137,0.75);
 
@@ -153,7 +153,6 @@ nav {
 	padding: 0;
 	border-bottom: 1px solid $border-color;
 	overflow: hidden;
-
 	aside {
 		width: 100%;
 		padding: 1rem;
@@ -167,11 +166,9 @@ nav {
 	  	background-size: cover;
 	  	background-repeat: no-repeat;
 	  	background-position: 50% 50%;
-
 		h1 {
 			font-size: 2.5em;
 		}
-
 		.banner-button {
 			background-color: $secondary-color;
 		  	border: 1px solid $secondary-color;
@@ -181,8 +178,7 @@ nav {
 		  	text-align: center;
 		  	text-decoration: none;
 		  	display: inline-block;
-		  	font-size: 16px;
-		  	margin: 4px 2px;
+		  	margin: 0.25rem 0.125rem;
 		  	transition-duration: 0.4s;
 			&:hover {
 				background-color: $primary-color;
@@ -193,7 +189,7 @@ nav {
 				text-decoration: none;
 				color: #000;
 				display: block;
-				padding: 16px 32px;
+				padding: 1rem 2rem;
 				&:hover {
 					color: #FFF
 				}
@@ -219,7 +215,6 @@ nav {
   	background-size: cover;
   	background-repeat: no-repeat;
   	background-position: 50% 50%;
-
 	.content {
 		max-width: 100%;
 		margin: 3rem 1rem 3rem 1rem;
@@ -229,11 +224,9 @@ nav {
 		background-image: $background-gradient;
 		box-shadow: $box-shadow;
 		overflow: hidden;
-
 		h2 {
 			padding: 1rem;
 		}
-
 		p {
 			padding: 1rem;
 		}
@@ -248,7 +241,6 @@ nav {
   	background-size: cover;
   	background-repeat: no-repeat;
   	background-position: 50% 50%;
-
 	.gallery-inner {
 		text-align: center;
 		margin: 0 2rem 2rem 2rem;
@@ -261,6 +253,20 @@ nav {
 	padding: 1rem;
 	grid-gap: 1rem;
 	grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;
+	figure {
+		padding: 0.5rem;
+		max-width: 100%;
+		place-self: center;
+		text-align: center;
+		border-radius: 3px;
+		background-image: $background-gradient;
+		box-shadow: $box-shadow;
+		overflow: hidden;
+		margin: 0;
+		img {
+			width: 100%;
+		}
+	}
 }
 
 @media screen and (min-width: 980px) and (max-width: 1280px) {
@@ -275,105 +281,101 @@ nav {
 	}
 }
 
-article {
-	padding: 0.5rem;
-	max-width: 100%;
-	place-self: center;
-	text-align: center;
-	border-radius: 3px;
-	background-image: $background-gradient;
-	box-shadow: $box-shadow;
-	overflow: hidden;
 
-	img {
-		width: 100%;
-	}
-}
 
 /*CONTACT FORM*/
 
 .inner-form {
-	padding: 1rem 0;
+	padding: 3rem 0;
+	h2 {
+		text-align: center;
+	}
 }
 
-.inner-form	h2 {
+form {
+	margin: 0 2rem;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	.field-half-name {
+		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		input {
+			margin: 0.5rem;
+			padding: 0.5rem;
+		}
+	}
+	.field-half-email {
+		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		input {
+			margin: 0.5rem;
+			padding: 0.5rem;
+		}
+	}
+	.field-half-message {
+		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		textarea {
+			margin: 0.5rem;
+			padding: 0.5rem;
+		}
+	}
+	.form-button {
+		background-color: $secondary-color;
+		border: 1px solid $secondary-color;
+		box-shadow: $box-shadow;
+		border-radius: 4px;
+		color: #000;
 		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		margin: 0.25rem 0.125px;
+		padding: 1rem 2rem;
+		transition-duration: 0.4s;
+		&:hover {
+			background-color: $primary-color;
+			color: #FFF;
+			border: 1px solid $primary-color;
+		}
+	}
 }
 	
-.fields {
-		padding: 1rem;
-		display: grid;
-		grid-template: 1fr 1fr / 1fr 1fr;
-		place-items: stretch;
+@media screen and (min-width: 737px) {
+	form {
+		width: 70%;
+		margin: 0 auto;
+	}
+
+	.field-half-name {
+		width: 50% !important;
+	}
+
+	.field-half-email {
+		width: 50% !important;
+	}
 }
 
-.field-half-name {
-	grid-column: 1/ span 1;
-	grid-row: 1 / span 1;
-	text-align: center;
-	margin: 0;
-	padding: 0.5rem;
-} 
-
-.field-half-email {
-	grid-column: 2/ span 1;
-	grid-row: 1 / span 1;
-	text-align: center;
-	margin: 0;
-	padding: 0.5rem;
-} 
-
-.field-half-message {
-	grid-column: 1/ span 2;
-	grid-row: 2 / span 3;
-	text-align: center;
-	padding: 1rem;
-}
-
-textarea {
-	height: 6rem;
-	padding-top: 1rem;
-}
-
-
-.submit {
-	text-align: center;
-}
-
-.submit input {
-	background-color: transparent;
-	width: 50%;
-	transition: 0.3s;
-	cursor: pointer;
-}
-
-
-
-input, textarea {
-	height: 3rem;
-    border-radius: 4px;
-    border: solid 1px black;
-    padding: 0 0.825rem;
-    width: 100%;
-}
-
-
+/* FOOTER */
 
 footer {
 	background-color: $secondary-color;
 	border-top: 1px solid $border-color;
-
-	.inner-footer {
-		width: 80%;
-		margin: 0 auto;
-		overflow: hidden;
-		text-align: center;
-
-		span {
-			padding: 1rem;
-			display: inline-block;
-		}
+	overflow: hidden;
+	text-align: center;
+	span {
+		padding: 1rem;
+		display: inline-block;
 	}
+	
 }
 
 .fab, .fas {
